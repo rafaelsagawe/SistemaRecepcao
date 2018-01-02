@@ -21,14 +21,12 @@ namespace WindowsFormsApp2
         {
             this.Validate();
             this.setoresBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.databaseDataSet);
 
         }
 
         private void Frm_CadSetor_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'databaseDataSet.setores'. Você pode movê-la ou removê-la conforme necessário.
-            this.setoresTableAdapter.Fill(this.databaseDataSet.setores);
 
         }
     }

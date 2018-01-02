@@ -34,10 +34,7 @@
             System.Windows.Forms.Label abreviacaoLabel;
             System.Windows.Forms.Label superiorLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CadSetor));
-            this.databaseDataSet = new WindowsFormsApp2.DatabaseDataSet();
             this.setoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.setoresTableAdapter = new WindowsFormsApp2.DatabaseDataSetTableAdapters.setoresTableAdapter();
-            this.tableAdapterManager = new WindowsFormsApp2.DatabaseDataSetTableAdapters.TableAdapterManager();
             this.setoresBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -60,7 +57,6 @@
             nome_setorLabel = new System.Windows.Forms.Label();
             abreviacaoLabel = new System.Windows.Forms.Label();
             superiorLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.setoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.setoresBindingNavigator)).BeginInit();
             this.setoresBindingNavigator.SuspendLayout();
@@ -104,26 +100,17 @@
             // 
             // databaseDataSet
             // 
-            this.databaseDataSet.DataSetName = "DatabaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // setoresBindingSource
             // 
             this.setoresBindingSource.DataMember = "setores";
-            this.setoresBindingSource.DataSource = this.databaseDataSet;
             // 
             // setoresTableAdapter
             // 
-            this.setoresTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.recpcaoTableAdapter = null;
-            this.tableAdapterManager.setoresTableAdapter = this.setoresTableAdapter;
-            this.tableAdapterManager.UpdateOrder = WindowsFormsApp2.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.visitanteTableAdapter = null;
-            this.tableAdapterManager.visitaTableAdapter = null;
+
             // 
             // setoresBindingNavigator
             // 
@@ -312,7 +299,6 @@
             this.Text = "Cadastro de setor";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Frm_CadSetor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.setoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.setoresBindingNavigator)).EndInit();
             this.setoresBindingNavigator.ResumeLayout(false);
@@ -324,10 +310,7 @@
 
         #endregion
 
-        private DatabaseDataSet databaseDataSet;
         private System.Windows.Forms.BindingSource setoresBindingSource;
-        private DatabaseDataSetTableAdapters.setoresTableAdapter setoresTableAdapter;
-        private DatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator setoresBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;

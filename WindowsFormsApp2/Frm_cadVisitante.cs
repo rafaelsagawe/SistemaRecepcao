@@ -39,10 +39,6 @@ namespace WindowsFormsApp2
 
         private void Frm_cadVisitante_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'databaseDataSet.setores'. Você pode movê-la ou removê-la conforme necessário.
-            this.setoresTableAdapter.Fill(this.databaseDataSet.setores);
-            // TODO: esta linha de código carrega dados na tabela 'databaseDataSet.visita'. Você pode movê-la ou removê-la conforme necessário.
-            this.visitaTableAdapter.Fill(this.databaseDataSet.visita);
             // TODO: esta linha de código carrega dados na tabela 'databaseDataSet.visitante'. Você pode movê-la ou removê-la conforme necessário.
             this.visitanteTableAdapter.Fill(this.databaseDataSet.visitante);
             this.visitanteBindingSource.AddNew();
@@ -61,15 +57,13 @@ namespace WindowsFormsApp2
 
         private void visitanteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.visitanteBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.databaseDataSet);
+
 
         }
 
         private void toolStripButton3_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+           
         }
 
         private void toolStripButton5_Click_1(object sender, EventArgs e)
@@ -87,6 +81,31 @@ namespace WindowsFormsApp2
         {
             Frm_CadSetor frm_setor = new Frm_CadSetor();
             frm_setor.Show();
+        }
+
+        private void visitanteBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void visitanteBindingNavigatorSaveItem_Click_2(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void visitanteBindingNavigatorSaveItem_Click_3(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.visitanteBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.databaseDataSet);
+
         }
     }
 }

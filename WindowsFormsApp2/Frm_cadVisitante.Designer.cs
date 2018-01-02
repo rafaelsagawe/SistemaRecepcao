@@ -29,50 +29,50 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_cadVisitante));
             System.Windows.Forms.Label assuntoLabel;
             System.Windows.Forms.Label cpfLabel;
             System.Windows.Forms.Label data_nascimentoLabel;
             System.Windows.Forms.Label nomeLabel;
             System.Windows.Forms.Label data_visitaLabel;
             System.Windows.Forms.Label setor_visitaLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_cadVisitante));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.databaseDataSet = new WindowsFormsApp2.DatabaseDataSet();
+            this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.visitanteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSet = new WindowsFormsApp2.DatabaseDataSet();
+            this.data_nascimentoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.cpfMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.visitanteTableAdapter = new WindowsFormsApp2.DatabaseDataSetTableAdapters.visitanteTableAdapter();
             this.tableAdapterManager = new WindowsFormsApp2.DatabaseDataSetTableAdapters.TableAdapterManager();
+            this.setoresTableAdapter = new WindowsFormsApp2.DatabaseDataSetTableAdapters.setoresTableAdapter();
+            this.visitaTableAdapter = new WindowsFormsApp2.DatabaseDataSetTableAdapters.visitaTableAdapter();
             this.visitanteBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.visitanteBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.assuntoTextBox = new System.Windows.Forms.TextBox();
-            this.cpfMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.data_nascimentoDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.nomeTextBox = new System.Windows.Forms.TextBox();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_setor = new System.Windows.Forms.ToolStripButton();
+            this.assuntoTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.visitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.visitaTableAdapter = new WindowsFormsApp2.DatabaseDataSetTableAdapters.visitaTableAdapter();
-            this.data_visitaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.setor_visitaComboBox = new System.Windows.Forms.ComboBox();
+            this.visitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.setoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.setoresTableAdapter = new WindowsFormsApp2.DatabaseDataSetTableAdapters.setoresTableAdapter();
+            this.data_visitaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             assuntoLabel = new System.Windows.Forms.Label();
             cpfLabel = new System.Windows.Forms.Label();
             data_nascimentoLabel = new System.Windows.Forms.Label();
@@ -81,8 +81,8 @@
             setor_visitaLabel = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitanteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitanteBindingNavigator)).BeginInit();
             this.visitanteBindingNavigator.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -90,15 +90,69 @@
             ((System.ComponentModel.ISupportInitialize)(this.setoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // assuntoLabel
+            // 
+            assuntoLabel.AutoSize = true;
+            assuntoLabel.Location = new System.Drawing.Point(7, 44);
+            assuntoLabel.Name = "assuntoLabel";
+            assuntoLabel.Size = new System.Drawing.Size(47, 13);
+            assuntoLabel.TabIndex = 5;
+            assuntoLabel.Text = "assunto:";
+            // 
+            // cpfLabel
+            // 
+            cpfLabel.AutoSize = true;
+            cpfLabel.Location = new System.Drawing.Point(313, 26);
+            cpfLabel.Name = "cpfLabel";
+            cpfLabel.Size = new System.Drawing.Size(25, 13);
+            cpfLabel.TabIndex = 4;
+            cpfLabel.Text = "cpf:";
+            // 
+            // data_nascimentoLabel
+            // 
+            data_nascimentoLabel.AutoSize = true;
+            data_nascimentoLabel.Location = new System.Drawing.Point(7, 53);
+            data_nascimentoLabel.Name = "data_nascimentoLabel";
+            data_nascimentoLabel.Size = new System.Drawing.Size(88, 13);
+            data_nascimentoLabel.TabIndex = 5;
+            data_nascimentoLabel.Text = "data nascimento:";
+            // 
+            // nomeLabel
+            // 
+            nomeLabel.AutoSize = true;
+            nomeLabel.Location = new System.Drawing.Point(7, 26);
+            nomeLabel.Name = "nomeLabel";
+            nomeLabel.Size = new System.Drawing.Size(36, 13);
+            nomeLabel.TabIndex = 6;
+            nomeLabel.Text = "nome:";
+            // 
+            // data_visitaLabel
+            // 
+            data_visitaLabel.AutoSize = true;
+            data_visitaLabel.Location = new System.Drawing.Point(213, 21);
+            data_visitaLabel.Name = "data_visitaLabel";
+            data_visitaLabel.Size = new System.Drawing.Size(58, 13);
+            data_visitaLabel.TabIndex = 8;
+            data_visitaLabel.Text = "data visita:";
+            // 
+            // setor_visitaLabel
+            // 
+            setor_visitaLabel.AutoSize = true;
+            setor_visitaLabel.Location = new System.Drawing.Point(7, 24);
+            setor_visitaLabel.Name = "setor_visitaLabel";
+            setor_visitaLabel.Size = new System.Drawing.Size(60, 13);
+            setor_visitaLabel.TabIndex = 9;
+            setor_visitaLabel.Text = "setor visita:";
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 525);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 286);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(531, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(500, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
@@ -132,24 +186,48 @@
             this.groupBox1.Controls.Add(this.cpfMaskedTextBox);
             this.groupBox1.Location = new System.Drawing.Point(7, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(485, 119);
+            this.groupBox1.Size = new System.Drawing.Size(485, 103);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do visitante";
             // 
-            // timer1
+            // nomeTextBox
             // 
-            this.timer1.Enabled = true;
+            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "nome", true));
+            this.nomeTextBox.Location = new System.Drawing.Point(49, 23);
+            this.nomeTextBox.Name = "nomeTextBox";
+            this.nomeTextBox.Size = new System.Drawing.Size(208, 20);
+            this.nomeTextBox.TabIndex = 7;
+            // 
+            // visitanteBindingSource
+            // 
+            this.visitanteBindingSource.DataMember = "visitante";
+            this.visitanteBindingSource.DataSource = this.databaseDataSet;
             // 
             // databaseDataSet
             // 
             this.databaseDataSet.DataSetName = "DatabaseDataSet";
             this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // visitanteBindingSource
+            // data_nascimentoDateTimePicker
             // 
-            this.visitanteBindingSource.DataMember = "visitante";
-            this.visitanteBindingSource.DataSource = this.databaseDataSet;
+            this.data_nascimentoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.visitanteBindingSource, "data_nascimento", true));
+            this.data_nascimentoDateTimePicker.Location = new System.Drawing.Point(8, 69);
+            this.data_nascimentoDateTimePicker.Name = "data_nascimentoDateTimePicker";
+            this.data_nascimentoDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.data_nascimentoDateTimePicker.TabIndex = 6;
+            // 
+            // cpfMaskedTextBox
+            // 
+            this.cpfMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "cpf", true));
+            this.cpfMaskedTextBox.Location = new System.Drawing.Point(344, 23);
+            this.cpfMaskedTextBox.Name = "cpfMaskedTextBox";
+            this.cpfMaskedTextBox.Size = new System.Drawing.Size(135, 20);
+            this.cpfMaskedTextBox.TabIndex = 5;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
             // 
             // visitanteTableAdapter
             // 
@@ -163,6 +241,14 @@
             this.tableAdapterManager.UpdateOrder = WindowsFormsApp2.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.visitanteTableAdapter = this.visitanteTableAdapter;
             this.tableAdapterManager.visitaTableAdapter = this.visitaTableAdapter;
+            // 
+            // setoresTableAdapter
+            // 
+            this.setoresTableAdapter.ClearBeforeFill = true;
+            // 
+            // visitaTableAdapter
+            // 
+            this.visitaTableAdapter.ClearBeforeFill = true;
             // 
             // visitanteBindingNavigator
             // 
@@ -193,9 +279,34 @@
             this.visitanteBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.visitanteBindingNavigator.Name = "visitanteBindingNavigator";
             this.visitanteBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.visitanteBindingNavigator.Size = new System.Drawing.Size(531, 25);
+            this.visitanteBindingNavigator.Size = new System.Drawing.Size(500, 25);
             this.visitanteBindingNavigator.TabIndex = 5;
             this.visitanteBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Excluir";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -229,16 +340,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -261,26 +365,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Excluir";
             // 
             // visitanteBindingNavigatorSaveItem
             // 
@@ -291,74 +377,16 @@
             this.visitanteBindingNavigatorSaveItem.Text = "Salvar Dados";
             this.visitanteBindingNavigatorSaveItem.Click += new System.EventHandler(this.visitanteBindingNavigatorSaveItem_Click);
             // 
-            // assuntoLabel
+            // toolStripButton3
             // 
-            assuntoLabel.AutoSize = true;
-            assuntoLabel.Location = new System.Drawing.Point(7, 102);
-            assuntoLabel.Name = "assuntoLabel";
-            assuntoLabel.Size = new System.Drawing.Size(47, 13);
-            assuntoLabel.TabIndex = 5;
-            assuntoLabel.Text = "assunto:";
-            // 
-            // assuntoTextBox
-            // 
-            this.assuntoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "assunto", true));
-            this.assuntoTextBox.Location = new System.Drawing.Point(10, 118);
-            this.assuntoTextBox.Multiline = true;
-            this.assuntoTextBox.Name = "assuntoTextBox";
-            this.assuntoTextBox.Size = new System.Drawing.Size(469, 67);
-            this.assuntoTextBox.TabIndex = 6;
-            // 
-            // cpfLabel
-            // 
-            cpfLabel.AutoSize = true;
-            cpfLabel.Location = new System.Drawing.Point(313, 26);
-            cpfLabel.Name = "cpfLabel";
-            cpfLabel.Size = new System.Drawing.Size(25, 13);
-            cpfLabel.TabIndex = 4;
-            cpfLabel.Text = "cpf:";
-            // 
-            // cpfMaskedTextBox
-            // 
-            this.cpfMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "cpf", true));
-            this.cpfMaskedTextBox.Location = new System.Drawing.Point(344, 23);
-            this.cpfMaskedTextBox.Name = "cpfMaskedTextBox";
-            this.cpfMaskedTextBox.Size = new System.Drawing.Size(135, 20);
-            this.cpfMaskedTextBox.TabIndex = 5;
-            // 
-            // data_nascimentoLabel
-            // 
-            data_nascimentoLabel.AutoSize = true;
-            data_nascimentoLabel.Location = new System.Drawing.Point(7, 61);
-            data_nascimentoLabel.Name = "data_nascimentoLabel";
-            data_nascimentoLabel.Size = new System.Drawing.Size(88, 13);
-            data_nascimentoLabel.TabIndex = 5;
-            data_nascimentoLabel.Text = "data nascimento:";
-            // 
-            // data_nascimentoDateTimePicker
-            // 
-            this.data_nascimentoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.visitanteBindingSource, "data_nascimento", true));
-            this.data_nascimentoDateTimePicker.Location = new System.Drawing.Point(8, 77);
-            this.data_nascimentoDateTimePicker.Name = "data_nascimentoDateTimePicker";
-            this.data_nascimentoDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.data_nascimentoDateTimePicker.TabIndex = 6;
-            // 
-            // nomeLabel
-            // 
-            nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(7, 26);
-            nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(36, 13);
-            nomeLabel.TabIndex = 6;
-            nomeLabel.Text = "nome:";
-            // 
-            // nomeTextBox
-            // 
-            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "nome", true));
-            this.nomeTextBox.Location = new System.Drawing.Point(49, 23);
-            this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(208, 20);
-            this.nomeTextBox.TabIndex = 7;
+            this.toolStripButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton3.Image = global::WindowsFormsApp2.Properties.Resources.Exit;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.toolStripButton3.Size = new System.Drawing.Size(46, 22);
+            this.toolStripButton3.Text = "Sair";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click_1);
             // 
             // toolStripButton5
             // 
@@ -370,16 +398,6 @@
             this.toolStripButton5.Text = "Sobre";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click_1);
             // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStripButton3.Size = new System.Drawing.Size(30, 22);
-            this.toolStripButton3.Text = "Sair";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click_1);
-            // 
             // toolStripButton_setor
             // 
             this.toolStripButton_setor.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -390,6 +408,15 @@
             this.toolStripButton_setor.Text = "Setor";
             this.toolStripButton_setor.Click += new System.EventHandler(this.toolStripButton_setor_Click);
             // 
+            // assuntoTextBox
+            // 
+            this.assuntoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "assunto", true));
+            this.assuntoTextBox.Location = new System.Drawing.Point(10, 60);
+            this.assuntoTextBox.Multiline = true;
+            this.assuntoTextBox.Name = "assuntoTextBox";
+            this.assuntoTextBox.Size = new System.Drawing.Size(469, 67);
+            this.assuntoTextBox.TabIndex = 6;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(setor_visitaLabel);
@@ -398,47 +425,12 @@
             this.groupBox2.Controls.Add(this.data_visitaDateTimePicker);
             this.groupBox2.Controls.Add(assuntoLabel);
             this.groupBox2.Controls.Add(this.assuntoTextBox);
-            this.groupBox2.Location = new System.Drawing.Point(7, 224);
+            this.groupBox2.Location = new System.Drawing.Point(7, 143);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(524, 205);
+            this.groupBox2.Size = new System.Drawing.Size(485, 137);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Visita";
-            // 
-            // visitaBindingSource
-            // 
-            this.visitaBindingSource.DataMember = "visita";
-            this.visitaBindingSource.DataSource = this.databaseDataSet;
-            // 
-            // visitaTableAdapter
-            // 
-            this.visitaTableAdapter.ClearBeforeFill = true;
-            // 
-            // data_visitaLabel
-            // 
-            data_visitaLabel.AutoSize = true;
-            data_visitaLabel.Location = new System.Drawing.Point(213, 21);
-            data_visitaLabel.Name = "data_visitaLabel";
-            data_visitaLabel.Size = new System.Drawing.Size(58, 13);
-            data_visitaLabel.TabIndex = 8;
-            data_visitaLabel.Text = "data visita:";
-            // 
-            // data_visitaDateTimePicker
-            // 
-            this.data_visitaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.visitaBindingSource, "data_visita", true));
-            this.data_visitaDateTimePicker.Location = new System.Drawing.Point(277, 17);
-            this.data_visitaDateTimePicker.Name = "data_visitaDateTimePicker";
-            this.data_visitaDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.data_visitaDateTimePicker.TabIndex = 9;
-            // 
-            // setor_visitaLabel
-            // 
-            setor_visitaLabel.AutoSize = true;
-            setor_visitaLabel.Location = new System.Drawing.Point(7, 24);
-            setor_visitaLabel.Name = "setor_visitaLabel";
-            setor_visitaLabel.Size = new System.Drawing.Size(60, 13);
-            setor_visitaLabel.TabIndex = 9;
-            setor_visitaLabel.Text = "setor visita:";
             // 
             // setor_visitaComboBox
             // 
@@ -453,20 +445,29 @@
             this.setor_visitaComboBox.ValueMember = "id_setor";
             this.setor_visitaComboBox.SelectedIndexChanged += new System.EventHandler(this.setor_visitaComboBox_SelectedIndexChanged);
             // 
+            // visitaBindingSource
+            // 
+            this.visitaBindingSource.DataMember = "visita";
+            this.visitaBindingSource.DataSource = this.databaseDataSet;
+            // 
             // setoresBindingSource
             // 
             this.setoresBindingSource.DataMember = "setores";
             this.setoresBindingSource.DataSource = this.databaseDataSet;
             // 
-            // setoresTableAdapter
+            // data_visitaDateTimePicker
             // 
-            this.setoresTableAdapter.ClearBeforeFill = true;
+            this.data_visitaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.visitaBindingSource, "data_visita", true));
+            this.data_visitaDateTimePicker.Location = new System.Drawing.Point(277, 17);
+            this.data_visitaDateTimePicker.Name = "data_visitaDateTimePicker";
+            this.data_visitaDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.data_visitaDateTimePicker.TabIndex = 9;
             // 
             // Frm_cadVisitante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 547);
+            this.ClientSize = new System.Drawing.Size(500, 308);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.visitanteBindingNavigator);
@@ -482,8 +483,8 @@
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitanteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitanteBindingNavigator)).EndInit();
             this.visitanteBindingNavigator.ResumeLayout(false);
             this.visitanteBindingNavigator.PerformLayout();

@@ -32,43 +32,43 @@
             System.Windows.Forms.Label nomeLabel;
             System.Windows.Forms.Label data_nascimentoLabel;
             System.Windows.Forms.Label cpfLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_cadVisitante));
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label tel_resiLabel;
             System.Windows.Forms.Label tel_celLabel;
             System.Windows.Forms.Label data_visitaLabel;
             System.Windows.Forms.Label setor_visitadaLabel;
             System.Windows.Forms.Label data_nascimentoLabel1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_cadVisitante));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.databaseDataSet = new Recepcao.DatabaseDataSet();
+            this.data_nascimentoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.visitanteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSet = new Recepcao.DatabaseDataSet();
+            this.cpfMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.nomeTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.setor_visitadaComboBox = new System.Windows.Forms.ComboBox();
+            this.data_visitaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.assuntoRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.tel_celTextBox = new System.Windows.Forms.TextBox();
+            this.tel_resiTextBox = new System.Windows.Forms.TextBox();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
             this.visitanteTableAdapter = new Recepcao.DatabaseDataSetTableAdapters.visitanteTableAdapter();
             this.tableAdapterManager = new Recepcao.DatabaseDataSetTableAdapters.TableAdapterManager();
             this.visitanteBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.visitanteBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.emailTextBox = new System.Windows.Forms.TextBox();
-            this.tel_resiTextBox = new System.Windows.Forms.TextBox();
-            this.tel_celTextBox = new System.Windows.Forms.TextBox();
-            this.assuntoRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.data_visitaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.setor_visitadaComboBox = new System.Windows.Forms.ComboBox();
-            this.nomeTextBox = new System.Windows.Forms.TextBox();
-            this.cpfMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.data_nascimentoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tSB_sair = new System.Windows.Forms.ToolStripButton();
             this.tSB_sobre = new System.Windows.Forms.ToolStripButton();
             nomeLabel = new System.Windows.Forms.Label();
@@ -81,11 +81,11 @@
             setor_visitadaLabel = new System.Windows.Forms.Label();
             data_nascimentoLabel1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.visitanteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.visitanteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitanteBindingNavigator)).BeginInit();
             this.visitanteBindingNavigator.SuspendLayout();
             this.SuspendLayout();
@@ -117,6 +117,60 @@
             cpfLabel.TabIndex = 8;
             cpfLabel.Text = "cpf:";
             // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(23, 23);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(34, 13);
+            emailLabel.TabIndex = 0;
+            emailLabel.Text = "email:";
+            // 
+            // tel_resiLabel
+            // 
+            tel_resiLabel.AutoSize = true;
+            tel_resiLabel.Location = new System.Drawing.Point(17, 53);
+            tel_resiLabel.Name = "tel_resiLabel";
+            tel_resiLabel.Size = new System.Drawing.Size(40, 13);
+            tel_resiLabel.TabIndex = 2;
+            tel_resiLabel.Text = "tel resi:";
+            // 
+            // tel_celLabel
+            // 
+            tel_celLabel.AutoSize = true;
+            tel_celLabel.Location = new System.Drawing.Point(19, 83);
+            tel_celLabel.Name = "tel_celLabel";
+            tel_celLabel.Size = new System.Drawing.Size(38, 13);
+            tel_celLabel.TabIndex = 4;
+            tel_celLabel.Text = "tel cel:";
+            // 
+            // data_visitaLabel
+            // 
+            data_visitaLabel.AutoSize = true;
+            data_visitaLabel.Location = new System.Drawing.Point(12, 163);
+            data_visitaLabel.Name = "data_visitaLabel";
+            data_visitaLabel.Size = new System.Drawing.Size(58, 13);
+            data_visitaLabel.TabIndex = 14;
+            data_visitaLabel.Text = "data visita:";
+            // 
+            // setor_visitadaLabel
+            // 
+            setor_visitadaLabel.AutoSize = true;
+            setor_visitadaLabel.Location = new System.Drawing.Point(11, 23);
+            setor_visitadaLabel.Name = "setor_visitadaLabel";
+            setor_visitadaLabel.Size = new System.Drawing.Size(72, 13);
+            setor_visitadaLabel.TabIndex = 15;
+            setor_visitadaLabel.Text = "setor visitada:";
+            // 
+            // data_nascimentoLabel1
+            // 
+            data_nascimentoLabel1.AutoSize = true;
+            data_nascimentoLabel1.Location = new System.Drawing.Point(113, 64);
+            data_nascimentoLabel1.Name = "data_nascimentoLabel1";
+            data_nascimentoLabel1.Size = new System.Drawing.Size(88, 13);
+            data_nascimentoLabel1.TabIndex = 10;
+            data_nascimentoLabel1.Text = "data nascimento:";
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -135,6 +189,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do visitante";
             // 
+            // data_nascimentoDateTimePicker
+            // 
+            this.data_nascimentoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.visitanteBindingSource, "data_nascimento", true));
+            this.data_nascimentoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.data_nascimentoDateTimePicker.Location = new System.Drawing.Point(207, 60);
+            this.data_nascimentoDateTimePicker.Name = "data_nascimentoDateTimePicker";
+            this.data_nascimentoDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.data_nascimentoDateTimePicker.TabIndex = 11;
+            // 
+            // visitanteBindingSource
+            // 
+            this.visitanteBindingSource.DataMember = "visitante";
+            this.visitanteBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "DatabaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cpfMaskedTextBox
+            // 
+            this.cpfMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "cpf", true));
+            this.cpfMaskedTextBox.Location = new System.Drawing.Point(343, 23);
+            this.cpfMaskedTextBox.Name = "cpfMaskedTextBox";
+            this.cpfMaskedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.cpfMaskedTextBox.TabIndex = 10;
+            // 
+            // nomeTextBox
+            // 
+            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "nome", true));
+            this.nomeTextBox.Location = new System.Drawing.Point(48, 23);
+            this.nomeTextBox.Name = "nomeTextBox";
+            this.nomeTextBox.Size = new System.Drawing.Size(246, 20);
+            this.nomeTextBox.TabIndex = 9;
+            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -151,6 +240,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Visita";
             // 
+            // setor_visitadaComboBox
+            // 
+            this.setor_visitadaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "setor_visitada", true));
+            this.setor_visitadaComboBox.FormattingEnabled = true;
+            this.setor_visitadaComboBox.Location = new System.Drawing.Point(89, 20);
+            this.setor_visitadaComboBox.Name = "setor_visitadaComboBox";
+            this.setor_visitadaComboBox.Size = new System.Drawing.Size(340, 21);
+            this.setor_visitadaComboBox.TabIndex = 16;
+            // 
+            // data_visitaDateTimePicker
+            // 
+            this.data_visitaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.visitanteBindingSource, "data_visita", true));
+            this.data_visitaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.data_visitaDateTimePicker.Location = new System.Drawing.Point(76, 159);
+            this.data_visitaDateTimePicker.Name = "data_visitaDateTimePicker";
+            this.data_visitaDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.data_visitaDateTimePicker.TabIndex = 15;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.assuntoRichTextBox);
@@ -160,6 +267,15 @@
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Assunto";
+            // 
+            // assuntoRichTextBox
+            // 
+            this.assuntoRichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "assunto", true));
+            this.assuntoRichTextBox.Location = new System.Drawing.Point(6, 19);
+            this.assuntoRichTextBox.Name = "assuntoRichTextBox";
+            this.assuntoRichTextBox.Size = new System.Drawing.Size(414, 79);
+            this.assuntoRichTextBox.TabIndex = 1;
+            this.assuntoRichTextBox.Text = "";
             // 
             // groupBox4
             // 
@@ -176,15 +292,29 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Contatos";
             // 
-            // databaseDataSet
+            // tel_celTextBox
             // 
-            this.databaseDataSet.DataSetName = "DatabaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tel_celTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "tel_cel", true));
+            this.tel_celTextBox.Location = new System.Drawing.Point(63, 80);
+            this.tel_celTextBox.Name = "tel_celTextBox";
+            this.tel_celTextBox.Size = new System.Drawing.Size(144, 20);
+            this.tel_celTextBox.TabIndex = 5;
             // 
-            // visitanteBindingSource
+            // tel_resiTextBox
             // 
-            this.visitanteBindingSource.DataMember = "visitante";
-            this.visitanteBindingSource.DataSource = this.databaseDataSet;
+            this.tel_resiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "tel_resi", true));
+            this.tel_resiTextBox.Location = new System.Drawing.Point(63, 50);
+            this.tel_resiTextBox.Name = "tel_resiTextBox";
+            this.tel_resiTextBox.Size = new System.Drawing.Size(144, 20);
+            this.tel_resiTextBox.TabIndex = 3;
+            // 
+            // emailTextBox
+            // 
+            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "email", true));
+            this.emailTextBox.Location = new System.Drawing.Point(63, 20);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(372, 20);
+            this.emailTextBox.TabIndex = 1;
             // 
             // visitanteTableAdapter
             // 
@@ -230,6 +360,32 @@
             this.visitanteBindingNavigator.TabIndex = 12;
             this.visitanteBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Excluir";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -262,16 +418,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -294,26 +443,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Excluir";
             // 
             // visitanteBindingNavigatorSaveItem
             // 
@@ -324,136 +455,6 @@
             this.visitanteBindingNavigatorSaveItem.Text = "Salvar Dados";
             this.visitanteBindingNavigatorSaveItem.Click += new System.EventHandler(this.visitanteBindingNavigatorSaveItem_Click_3);
             // 
-            // emailLabel
-            // 
-            emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(23, 23);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(34, 13);
-            emailLabel.TabIndex = 0;
-            emailLabel.Text = "email:";
-            // 
-            // emailTextBox
-            // 
-            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(63, 20);
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(372, 20);
-            this.emailTextBox.TabIndex = 1;
-            // 
-            // tel_resiLabel
-            // 
-            tel_resiLabel.AutoSize = true;
-            tel_resiLabel.Location = new System.Drawing.Point(17, 53);
-            tel_resiLabel.Name = "tel_resiLabel";
-            tel_resiLabel.Size = new System.Drawing.Size(40, 13);
-            tel_resiLabel.TabIndex = 2;
-            tel_resiLabel.Text = "tel resi:";
-            // 
-            // tel_resiTextBox
-            // 
-            this.tel_resiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "tel_resi", true));
-            this.tel_resiTextBox.Location = new System.Drawing.Point(63, 50);
-            this.tel_resiTextBox.Name = "tel_resiTextBox";
-            this.tel_resiTextBox.Size = new System.Drawing.Size(144, 20);
-            this.tel_resiTextBox.TabIndex = 3;
-            // 
-            // tel_celLabel
-            // 
-            tel_celLabel.AutoSize = true;
-            tel_celLabel.Location = new System.Drawing.Point(19, 83);
-            tel_celLabel.Name = "tel_celLabel";
-            tel_celLabel.Size = new System.Drawing.Size(38, 13);
-            tel_celLabel.TabIndex = 4;
-            tel_celLabel.Text = "tel cel:";
-            // 
-            // tel_celTextBox
-            // 
-            this.tel_celTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "tel_cel", true));
-            this.tel_celTextBox.Location = new System.Drawing.Point(63, 80);
-            this.tel_celTextBox.Name = "tel_celTextBox";
-            this.tel_celTextBox.Size = new System.Drawing.Size(144, 20);
-            this.tel_celTextBox.TabIndex = 5;
-            // 
-            // assuntoRichTextBox
-            // 
-            this.assuntoRichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "assunto", true));
-            this.assuntoRichTextBox.Location = new System.Drawing.Point(6, 19);
-            this.assuntoRichTextBox.Name = "assuntoRichTextBox";
-            this.assuntoRichTextBox.Size = new System.Drawing.Size(414, 79);
-            this.assuntoRichTextBox.TabIndex = 1;
-            this.assuntoRichTextBox.Text = "";
-            // 
-            // data_visitaLabel
-            // 
-            data_visitaLabel.AutoSize = true;
-            data_visitaLabel.Location = new System.Drawing.Point(12, 163);
-            data_visitaLabel.Name = "data_visitaLabel";
-            data_visitaLabel.Size = new System.Drawing.Size(58, 13);
-            data_visitaLabel.TabIndex = 14;
-            data_visitaLabel.Text = "data visita:";
-            // 
-            // data_visitaDateTimePicker
-            // 
-            this.data_visitaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.visitanteBindingSource, "data_visita", true));
-            this.data_visitaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.data_visitaDateTimePicker.Location = new System.Drawing.Point(76, 159);
-            this.data_visitaDateTimePicker.Name = "data_visitaDateTimePicker";
-            this.data_visitaDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.data_visitaDateTimePicker.TabIndex = 15;
-            // 
-            // setor_visitadaLabel
-            // 
-            setor_visitadaLabel.AutoSize = true;
-            setor_visitadaLabel.Location = new System.Drawing.Point(11, 23);
-            setor_visitadaLabel.Name = "setor_visitadaLabel";
-            setor_visitadaLabel.Size = new System.Drawing.Size(72, 13);
-            setor_visitadaLabel.TabIndex = 15;
-            setor_visitadaLabel.Text = "setor visitada:";
-            // 
-            // setor_visitadaComboBox
-            // 
-            this.setor_visitadaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "setor_visitada", true));
-            this.setor_visitadaComboBox.FormattingEnabled = true;
-            this.setor_visitadaComboBox.Location = new System.Drawing.Point(89, 20);
-            this.setor_visitadaComboBox.Name = "setor_visitadaComboBox";
-            this.setor_visitadaComboBox.Size = new System.Drawing.Size(340, 21);
-            this.setor_visitadaComboBox.TabIndex = 16;
-            // 
-            // nomeTextBox
-            // 
-            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "nome", true));
-            this.nomeTextBox.Location = new System.Drawing.Point(48, 23);
-            this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(246, 20);
-            this.nomeTextBox.TabIndex = 9;
-            // 
-            // cpfMaskedTextBox
-            // 
-            this.cpfMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.visitanteBindingSource, "cpf", true));
-            this.cpfMaskedTextBox.Location = new System.Drawing.Point(343, 23);
-            this.cpfMaskedTextBox.Name = "cpfMaskedTextBox";
-            this.cpfMaskedTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cpfMaskedTextBox.TabIndex = 10;
-            // 
-            // data_nascimentoLabel1
-            // 
-            data_nascimentoLabel1.AutoSize = true;
-            data_nascimentoLabel1.Location = new System.Drawing.Point(113, 64);
-            data_nascimentoLabel1.Name = "data_nascimentoLabel1";
-            data_nascimentoLabel1.Size = new System.Drawing.Size(88, 13);
-            data_nascimentoLabel1.TabIndex = 10;
-            data_nascimentoLabel1.Text = "data nascimento:";
-            // 
-            // data_nascimentoDateTimePicker
-            // 
-            this.data_nascimentoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.visitanteBindingSource, "data_nascimento", true));
-            this.data_nascimentoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.data_nascimentoDateTimePicker.Location = new System.Drawing.Point(207, 60);
-            this.data_nascimentoDateTimePicker.Name = "data_nascimentoDateTimePicker";
-            this.data_nascimentoDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.data_nascimentoDateTimePicker.TabIndex = 11;
-            // 
             // tSB_sair
             // 
             this.tSB_sair.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -462,6 +463,7 @@
             this.tSB_sair.Name = "tSB_sair";
             this.tSB_sair.Size = new System.Drawing.Size(46, 22);
             this.tSB_sair.Text = "Sair";
+            this.tSB_sair.Click += new System.EventHandler(this.tSB_sair_Click);
             // 
             // tSB_sobre
             // 
@@ -471,6 +473,7 @@
             this.tSB_sobre.Name = "tSB_sobre";
             this.tSB_sobre.Size = new System.Drawing.Size(57, 22);
             this.tSB_sobre.Text = "Sobre";
+            this.tSB_sobre.Click += new System.EventHandler(this.tSB_sobre_Click);
             // 
             // Frm_cadVisitante
             // 
@@ -489,13 +492,13 @@
             this.Load += new System.EventHandler(this.Frm_cadVisitante_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.visitanteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.visitanteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitanteBindingNavigator)).EndInit();
             this.visitanteBindingNavigator.ResumeLayout(false);
             this.visitanteBindingNavigator.PerformLayout();

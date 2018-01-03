@@ -17,25 +17,6 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripButton3_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void toolStripStatusLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
 
         private void Frm_cadVisitante_Load(object sender, EventArgs e)
         {
@@ -45,59 +26,25 @@ namespace WindowsFormsApp2
 
         }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void toolStripButton5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void visitanteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void toolStripButton3_Click_1(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void toolStripButton5_Click_1(object sender, EventArgs e)
+        private void sobre(object sender, EventArgs e)
         {
             Frm_Sobre frm = new Frm_Sobre();
             frm.ShowDialog();
         }
 
-        private void setor_visitaComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        private void toolStripButton_setor_Click(object sender, EventArgs e)
+        private void setor(object sender, EventArgs e)
         {
             Frm_CadSetor frm_setor = new Frm_CadSetor();
             frm_setor.Show();
         }
 
-        private void visitanteBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
 
-
-        }
-
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        private void sair(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void visitanteBindingNavigatorSaveItem_Click_2(object sender, EventArgs e)
-        {
-
-
+            MessageBox.Show("Você está Saindo do sistema de cadastro de visitande", "Saida", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void visitanteBindingNavigatorSaveItem_Click_3(object sender, EventArgs e)
@@ -105,7 +52,22 @@ namespace WindowsFormsApp2
             this.Validate();
             this.visitanteBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.databaseDataSet);
+            MessageBox.Show("Visitante registrado", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            visitanteBindingNavigatorSaveItem_Click_3(sender, e);
+        }
+
+        private void tSB_sair_Click(object sender, EventArgs e)
+        {
+            sair(sender, e);
+        }
+
+        private void tSB_sobre_Click(object sender, EventArgs e)
+        {
+            sobre(sender, e);
         }
     }
 }
